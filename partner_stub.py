@@ -1,4 +1,4 @@
-"""Local fixture for the independent counterparty's HTTP interface."""
+"""模拟合作方的本地 HTTP 接口。"""
 import argparse
 from contextlib import closing
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -23,7 +23,7 @@ class PartnerServer(ThreadingHTTPServer):
         for example in json.loads(Path(exchanges).read_text(encoding="utf-8")):
             key = (example["operation"], encode(example["request"]))
             if key in self.examples or example["outcome"] not in {"success", "commit_disconnect"}:
-                raise ValueError("Duplicate request or unknown connection outcome")
+                raise ValueError("请求样例重复或连接结果未知")
             self.examples[key] = example
         with closing(self.connection()) as db, db:
             db.execute("""CREATE TABLE IF NOT EXISTS journal (
@@ -110,7 +110,7 @@ def main():
     with TemporaryDirectory(prefix="partner-") as directory:
         journal = args.journal or Path(directory) / "journal.sqlite3"
         with PartnerServer(("127.0.0.1", args.port), args.exchanges, journal) as server:
-            print(f"fixture listening on http://127.0.0.1:{server.server_port}", flush=True)
+            print(f"联调服务监听 http://127.0.0.1:{server.server_port}", flush=True)
             server.serve_forever()
 
 
