@@ -1,0 +1,78 @@
+{
+  "sites": [
+    "school-a",
+    "shelter-b"
+  ],
+  "students": [
+    "stu-11",
+    "stu-12",
+    "stu-13"
+  ],
+  "trip": {
+    "id": "van-7",
+    "from": "school-a",
+    "to": "shelter-b",
+    "booked": [
+      "stu-11",
+      "stu-12",
+      "stu-13"
+    ],
+    "boarded": [
+      "stu-11",
+      "stu-12"
+    ],
+    "counted_on_arrival": [
+      "stu-12"
+    ]
+  },
+  "delegation": {
+    "id": "auth-2",
+    "student": "stu-12",
+    "guardian": "parent-8",
+    "delegate": "aunt-3",
+    "expires_at": "2028-07-03T11:00:00+08:00",
+    "revoked_at": "2028-07-03T10:35:00+08:00"
+  },
+  "operators": {
+    "teacher-a": "school-a",
+    "teacher-b": "shelter-b",
+    "driver-7": "van-7"
+  },
+  "guardians": {
+    "stu-11": "parent-9",
+    "stu-12": "parent-8",
+    "stu-13": "parent-10"
+  },
+  "gate_requests": [
+    {
+      "id": "request-a",
+      "student": "stu-12",
+      "collector": "aunt-3",
+      "registered_at": "2028-07-03T10:20:00+08:00"
+    },
+    {
+      "id": "request-b",
+      "student": "stu-12",
+      "collector": "parent-8",
+      "registered_at": "2028-07-03T10:38:00+08:00"
+    }
+  ],
+  "trip_times": {
+    "departure": "2028-07-03T10:15:00+08:00",
+    "arrival": "2028-07-03T10:37:00+08:00"
+  },
+  "count_notes": [
+    {
+      "trip": "van-7",
+      "student": "stu-11",
+      "source": "departure_teacher",
+      "status": "boarded"
+    },
+    {
+      "trip": "van-7",
+      "student": "stu-11",
+      "source": "arrival_teacher",
+      "status": "not_seen"
+    }
+  ]
+}

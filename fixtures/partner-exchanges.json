@@ -1,0 +1,30 @@
+[
+  {
+    "operation": "gate-receipt",
+    "request": {
+      "terminal": "gate-b",
+      "student": "stu-12",
+      "handover": "handover-18",
+      "collector": "parent-8"
+    },
+    "reply": {
+      "receipt": "gate-18",
+      "observed_at": "2028-07-03T10:40:00+08:00"
+    },
+    "outcome": "commit_disconnect"
+  },
+  {
+    "operation": "gate-receipt",
+    "request": {
+      "terminal": "gate-a",
+      "student": "stu-11",
+      "handover": "handover-19",
+      "collector": "parent-9"
+    },
+    "reply": {
+      "receipt": "gate-19",
+      "observed_at": "2028-07-03T10:43:00+08:00"
+    },
+    "outcome": "success"
+  }
+]
